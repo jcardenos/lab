@@ -9,16 +9,30 @@ int main() {
 	cout << endl;
 
 	double coefficient_of_initial_amplitude = 0.0;
-	while (coefficient_of_initial_amplitude == (double)(int) coefficient_of_initial_amplitude) {
+	do {
 		cout << "Закон маятника: x(t) = A * sin(w*t + f_0). Во сколько раз в начальный момент координата x меньше амплитуды A?\nВведите коэффициент k: ";
 		cin >> coefficient_of_initial_amplitude;
-	}
+
+		if (!cin.good()) {
+			cin.clear();
+			cin.ignore(10, '\n');
+			cout << "Необходимо ввести вещественное число." << endl;
+		} else break;
+	} while (true);
+
 
 	double frequency_of_pendulum = 0.0;
-	while (frequency_of_pendulum == (double)(int) frequency_of_pendulum) {
+	
+	do {
 		cout << "Введите частоту маятника w: ";
 		cin >> frequency_of_pendulum;
-	}
+
+		if (!cin.good()) {
+			cin.clear();
+			cin.ignore(10, '\n');
+			cout << "Необходимо ввести вещественное число." << endl;
+		} else break;
+	} while (true);
 
 	const double PI = acos(-1.0);
 
