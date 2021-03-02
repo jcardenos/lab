@@ -9,6 +9,7 @@ int main() {
 	cout << endl;
 
 	double max_number = 0.0;
+
 	do {
 		cout << "Введите верхнюю границу произведения: ";
 		cin >> max_number;
@@ -17,14 +18,18 @@ int main() {
 			cin.clear();
 			cin.ignore(10, '\n');
 			cout << "Необходимо ввести вещественное число. Повторите ввод." << endl;
-		} else break;
+		}
+		else {
+			break;
+		}
 	} while (true);
 
-	double result = (1.0 + pow(0.5, (2.0 * max_number)));
+	double result = 0.0;
 
 	for (int i = 0; i <= max_number; i++) {
+		result = (1.0 + pow(0.5, (2.0 * i)));
 		result *= result;
 	}
 
-	cout << "Результат вычисления при n = " << max_number << " равен " << result << endl;
+	cout << "Результат вычисления при верхней границе n = " << max_number << " равен " << result << endl;
 }
