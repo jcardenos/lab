@@ -15,8 +15,7 @@ class Vector {
         }
 };
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "Russian");
     Vector vector{};
 
